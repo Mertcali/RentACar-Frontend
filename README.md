@@ -1,27 +1,62 @@
-# Rentacar
+# Angular ile RentACar-Frontend 
+## :mag:Başlarken
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Web uygulamaları geliştirmek için kullandığımız, Google tarafından geliştirilen bir framework.
 
-## Development server
++Visual Studio Code kullandık.
++Nodejs 14.16.0 LTS kurulumu yaptık.
++Angular cli kurulumu yaptık. (npm install -g @angular/cli)
++Projemizi oluşturduk.
++Bootstrap v5.0.0-beta3 kurduk.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :scroll:Geliştirmeler
 
-## Code scaffolding
+# 1. Veriler Api tarafından çekilmeye çalışıldı.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Hiçbir güzelleştirme olmadan sadece api'den veriler çekmeye çalışıldı.
+Sırasıyla markalar,renkler,müşteriler,arabalar,kiralamalar listelendi.**
 
-## Build
++Öncelikle çekmek istediğimiz veriler ve navbar için components klasörü oluşturuldu.
+daha sonra models ve services klasörü oluşturuldu.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
++Verileri çekmek için (sadece brand'i düşünürsek)
 
-## Running unit tests
+*brand , brandResponseModel, responseModel* modelleri oluşturuldu.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
++Services klasörünün içinde
+*brandService* oluşturuldu. HttpClient import edildi.(hem servis için hem app-module içinde(HttpClientModule))
 
-## Running end-to-end tests
++Servis içerisinde apiUrl yolu belli edilerek *getBrands()* yazıldı.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
++brandComponent'te servis private tanımlanarak *getBrands()* çağırılıp subscribe olundu.
+html'de bir ngFor ile basit şekilde veriler gösteriliyor mu test edildi.
 
-## Further help
+app.component.html'de yazılan
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <div class="container">
+     <app-navi></app-navi>
+     <div class="row">
+        <div class="col-md-2">
+         <app-brand></app-brand>
+         <br>
+          <app-customer></app-customer>
+       </div>
+       <div class="col-md-10">
+         <app-cardetail></app-cardetail>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-2">
+         <app-color></app-color>
+        </div>
+        <div class="col-md-10">
+         <app-rental></app-rental>
+        </div>
+     </div>
+    </div>
+    <router-outlet></router-outlet>
+
+
+şeklinde bir html'in nasıl yerler kaplayacağını belli etmek için bütün app'ler farklı renklendirildi. Bu renklendirme aşağıdaki şekilde:
+![yenideneme](https://user-images.githubusercontent.com/77545922/112861095-27730480-90bd-11eb-8b1d-53e4a9c96f57.PNG)
+
