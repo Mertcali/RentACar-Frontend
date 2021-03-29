@@ -92,7 +92,7 @@ carDetailComponent'e yazıldı.
 + Resimlerin gelip gelmediğini test etmek için öncelikle carcomponent içinde bir değişken cardetail.imagePath
 olarak denendi. ImagePath geliyordu. 
 
-+ resimlerin gösterilip gösterilmediğini test etmek için 
++ Resimlerin gösterilip gösterilmediğini test etmek için 
 cardetailcomponent.html'e  aşağıdaki kodlar eklendi.
 
         <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" alt="thumbnail" class="img-thumbnail"
@@ -123,7 +123,7 @@ Araçlarımızı aldığımıza göre şimdi bunları düzenlemesi kaldı.
 
 + Backend tarafında getcarDetails ile imagePath'i de alarak ek olarak oluşturduğum getCarImages ve getCarImagesById fonksiyonlarını
 sildim yerine cardetail component'ten bütün işlerime devam ettim.
-sadece carcomponent.html tarafında bootstrap'ten basit bir card alarak src kısmına imagepath'i koydum.
+Sadece carcomponent.html tarafında bootstrap'ten basit bir card alarak src kısmına imagepath'i koydum.
 
 + Bütün veriler tamamlandıktan sonra appcomponent.html'den app-rental, app-customer'ı kaldırdım
 sadece app-brand, app-color ve router-outlet'i bıraktım.	
