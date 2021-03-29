@@ -1,0 +1,74 @@
+<div class="container">
+    <div  class="alert alert-dark" role="alert">
+     <b>{{cars.carName}} </b> için Ödeme Sayfası
+    </div>  
+   
+    <div class="card">
+      <div class="card-top border-bottom text-center">
+        <h5>KART BİLGİLERİ</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left border">
+              <div class="row">
+                <div class="icons">
+                  <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                  <img
+                    src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
+                  />
+                  <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+                </div>
+              </div>
+              <form [formGroup]="paymentForm" >
+                <span>Kart Üzerindeki İsim:</span>
+                <input type="text" id="nameOnCard" name="nameOnCard" formControlName="nameOnCard" placeholder="Ad Soyad" required/>
+                <span>Kart Numarası:</span>
+                <input type="text" id="cardNumber"  class="form-control" formControlName="cardNumber" placeholder="0000 0000 0000" pattern="(?=.*[0-9]).{8,}"  />
+                <div class="row">
+                  <div class="col-8">
+                    <span>Ay </span> 
+                    <input type="text" id="expirationDate"  class="form-control" formControlName="expirationDate" placeholder="00/00" required/>
+                  </div>
+                  <div class="col-4">
+                      <span>  CVV:</span> 
+                      <input type="text" id="cardCVV"  class="form-control" formControlName="cardCVV" placeholder="CVV" required/>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  
+        <div  class="col-md-6">
+          <div class="right border">
+            <div class="header">Kiralama Özeti</div>
+            <hr />
+            <div  class="row lower">
+              <div class="col text-left">Araç Kodu:</div>
+              <div class="col text-right">{{cars.carId}}</div>
+            </div>
+            <div class="row lower">
+              <div  class="col text-left">Tarih:</div>
+              <div type=date  value="rentDate" class="col text-right">{{rental.rentDate | date:'dd-MM-yyyy'}}</div>
+            </div>
+            <div class="row lower">
+              <div class="col text-left">Teslim:</div>
+              <div type=date value="returnDate " class="col text-right">{{rental.returnDate | date:'dd-MM-yyyy'}} </div>
+            </div>
+            <div class="row lower">
+              <div class="col text-left">Günlük Ücret:</div>
+              <div class="col text-right">{{cars.dailyPrice}}</div>
+            </div>
+            <div (change)=getRentSummary(rental.rentDate,rental.returnDate) class="row lower">
+              <div class="col text-left"><b> Tutar:</b></div>
+              <div class="col text-right"><b>{{totalPrice}} </b></div>
+            </div>
+            <div class="row lower"></div>
+            <button (click)="addCreditCard()" class="btn btn-dark" type="button">Ödeme Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>

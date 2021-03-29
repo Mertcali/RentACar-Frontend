@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/cardetail';
+import { RentalDetail } from 'src/app/models/rentalDetail';
 import { CardetailService } from 'src/app/services/cardetail.service';
+import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-cardetail',
@@ -13,12 +16,16 @@ export class CardetailComponent implements OnInit {
   carDetails:CarDetail[]=[];
   carImages:CarDetail[]=[];
   car:CarDetail;
+  rent:RentalDetail[]=[];
+  currentCar:CarDetail;
 
   imageBasePath="https://localhost:44378"
   dataLoaded=true;
 
   constructor(private cardetailService:CardetailService,
-    private activatedRoute:ActivatedRoute
+    private activatedRoute:ActivatedRoute,
+    private toastrService:ToastrService,
+    private rentalService:RentalService
 
     ) { }
 
@@ -28,6 +35,8 @@ export class CardetailComponent implements OnInit {
         this.getCarDetailsByBrandId(params["brandId"])
       }else if(params["colorId"]){
         this.getCarDetailsByColorId(params["colorId"])
+      // }else if(params["carId"]){
+      //   this.getCarByCarId(params["carId"])
       }
       else{
         this.getCarDetails()
@@ -56,5 +65,18 @@ export class CardetailComponent implements OnInit {
         this.dataLoaded=true;
       })
       }
+
+  
+      getCarByCarId(carId:number){
+        this.cardetailService.getCarByCarId(carId).subscribe(response=>{
+          this.carDetails=response.data
+          this.dataLoaded=true;
+        })
+      }
+      setCurrentCar(car:CarDetail){
+        this.currentCar=car;
+      }
+
+
 
 }

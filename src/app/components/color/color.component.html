@@ -1,14 +1,43 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
+
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Renk Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Renk">
+</div>
+
+
 <ul class="list-group">
-  <li (click)="resetCurrentColor()" routerLink="/cars" [class]="getAllCarsClass()" class="list-group-item">Tüm Renkler</li>
+  <li (click)="resetCurrentColor()" routerLink="/cars" [class]="getAllCarsClass()" class="list-group-item list-group-item-action list-group-item-dark">Tüm Renkler</li>
 
   <li (click)="setCurrentColor(color)" routerLink="/cars/colors/{{color.id}}"
-  *ngFor="let color of colors" 
+  *ngFor="let color of colors | colorFilterPipe:filterText " 
   [class]="getCurrentColorClass(color)">
   {{color.name}}</li>
   
 </ul>
 
-<h5 *ngIf="currentColor">{{currentColor.name}} seçtiniz</h5><br><br>  
+<h5 *ngIf="currentColor">{{currentColor.name}} seçtiniz</h5><br><br>   -->
+
+<div class="mt-3">
+  <h6 class="text-primary">Renk</h6>
+  <select  class="form-select" [(ngModel)]="currentColor">
+    <option>Renk Seçiniz</option>
+    <option *ngFor="let color of colors" [ngValue]="color">
+      {{ color.name }}
+    </option>
+  </select>
+  <button
+  *ngIf="currentColor"
+    routerLink="/cars/colors/{{ currentColor.id }}"
+    type="button"
+    class="btn btn-secondary mt-3"
+  >
+    Filtrele
+  </button>
+  <button routerLink="/cars" type="button" class="btn btn-secondary mt-3 ms-0">
+    Filtreyi Temizle
+  </button>
+</div>

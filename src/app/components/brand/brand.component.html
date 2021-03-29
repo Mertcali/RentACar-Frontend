@@ -1,14 +1,42 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<ul class="list-group">
-  <li (click)="resetCurrentBrand()" routerLink="/cars" [class]="getAllCarsClass()" class="list-group-item">Tüm Araçlar</li>
 
+<div class="mb-3">
+  <label for="filterText" class="form-label">Marka Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Marka">
+</div>
+
+<div>
+  {{filterText}}
+</div>
+
+<ul class="list-group">
+  <li (click)="resetCurrentBrand()" routerLink="/cars" [class]="getAllCarsClass()" class="list-group-item list-group-item-action list-group-item-dark">Tüm Markalar </li>
   <li (click)="setCurrentBrand(brand)" routerLink="/cars/brands/{{brand.id}}"
-  *ngFor="let brand of brands" 
+  *ngFor="let brand of brands | brandFilterPipe:filterText" 
   [class]="getCurrentBrandClass(brand)">
   {{brand.name}}</li>
-  
-</ul>
+</ul>  -->
 
-<h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz</h5><br><br>  
+  
+<div class="mt-3">
+  <h6 class="text-primary">Marka</h6>
+  <select  class="form-select" [(ngModel)]="currentBrand">
+    <option>Marka Seçiniz</option>
+    <option *ngFor="let brand of brands" [ngValue]="brand">
+      {{ brand.name }}
+    </option>
+  </select>
+  <button
+  *ngIf="currentBrand"
+    routerLink="/cars/brands/{{ currentBrand.id }}"
+    type="button"
+    class="btn btn-secondary mt-3"
+  >
+    Filtrele
+  </button>
+  <button routerLink="/cars" type="button" class="btn btn-secondary mt-3 ms-0">
+    Filtreyi Temizle
+  </button>
+</div>

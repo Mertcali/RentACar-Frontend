@@ -12,6 +12,7 @@ export class BrandComponent implements OnInit {
   brands:Brand[]=[]
   currentBrand:Brand;
   nullBrand:Brand;
+  filterText="";
   dataLoaded=false;
 
   constructor(private brandService:BrandService) { }
@@ -41,7 +42,7 @@ export class BrandComponent implements OnInit {
 
   getAllCarsClass(){
     if(!this.currentBrand){
-      return "list-group-item list-group-item-warning"
+      return "list-group-item list-group-item-dark"
     }else{
       return "list-group-item"
     }

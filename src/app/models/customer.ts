@@ -1,5 +1,8 @@
 export interface Customer{
-    id:number,
+    customerId:number,
     userId:number,
     companyName:string,
+    userName:string,
+    email:string,
+    status:boolean
 }
