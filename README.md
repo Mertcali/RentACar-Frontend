@@ -11,7 +11,7 @@ Web uygulamaları geliştirmek için kullandığımız, Google tarafından geli�
 
 ## :scroll:Geliştirmeler
 
-# 1. Veriler Api tarafından çekilmeye çalışıldı.
+### 1. Veriler Api tarafından çekilmeye çalışıldı.
 
 **Hiçbir güzelleştirme olmadan sadece api'den veriler çekmeye çalışıldı.
 Sırasıyla markalar,renkler,müşteriler,arabalar,kiralamalar listelendi.**
