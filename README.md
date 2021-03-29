@@ -3,11 +3,11 @@
 
 Web uygulamaları geliştirmek için kullandığımız, Google tarafından geliştirilen bir framework.
 
-+Visual Studio Code kullandık.
-+Nodejs 14.16.0 LTS kurulumu yaptık.
-+Angular cli kurulumu yaptık. (npm install -g @angular/cli)
-+Projemizi oluşturduk.
-+Bootstrap v5.0.0-beta3 kurduk.
++ Visual Studio Code kullandık.
++ Nodejs 14.16.0 LTS kurulumu yaptık.
++ Angular cli kurulumu yaptık. (npm install -g @angular/cli)
++ Projemizi oluşturduk.
++ Bootstrap v5.0.0-beta3 kurduk.
 
 ## :scroll:Geliştirmeler
 
@@ -59,4 +59,8 @@ app.component.html'de yazılan
 
 şeklinde bir html'in nasıl yerler kaplayacağını belli etmek için bütün app'ler farklı renklendirildi. Bu renklendirme aşağıdaki şekilde:
 ![yenideneme](https://user-images.githubusercontent.com/77545922/112861095-27730480-90bd-11eb-8b1d-53e4a9c96f57.PNG)
+
+### 2. Biraz Refactoring ve Resimlerin Getirilişi
++ listResponseModel'lar oluşturulup diğer responseModel'lar silindi.
++ 
 
