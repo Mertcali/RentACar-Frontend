@@ -134,4 +134,18 @@ width="100" height="200" eklendi.
 + Tasarım düzenlemeleri yapılmadan en basit sonuç aşağıdaki gibi oldu.
 ![yenideneme2resim3](https://user-images.githubusercontent.com/77545922/112863822-eaf4d800-90bf-11eb-889b-1079c596f4d1.PNG)
 
++ Araçları marka-renk olarak dışında tek tek tüm araçların gözükebilmesi için car component oluşturuldu. Araca direkt olarak tıklandığında istenilen aracın ekrana getirilmesini sağlamak amacımız. Bunun için ilk başta şöyle bir yol izledim.  CarComponent'i oluşturdum.
+Backend tarafında getcarbycarid servisini, managerini,httpget işlemlerini yazdım.
+
++ İlk olarak düşündüğüm car'ı bir brand gibi düşünüp, tıklandığında cars/:carId routerlink'i verip 
+carDetailComponent'e bağlanarak ekrana getirmekti. Bu tabii çalıştı, carDetailComponent tarafında bir elseif
+daha ekleyerek gayet düzgün çalıştı.  Ancak sorun şu ki nasıl tüm araçları kart ile gösterdiysek burada da 1 kart gözüküyor ve tüm sayfa koca bir
+boşluk gibi gözüküyor aşağıdaki resimde örneği var. 
+![yenideneme2resim4](https://user-images.githubusercontent.com/77545922/112896964-b6951200-90e7-11eb-830f-e88fe32195c0.PNG)
+
++ Bunun için onecardetail diye bir component daha oluşturdum. Burada araca tıklandığında gidilecek yer olsun, 
+bütün resimleri toplu şekilde gösterilebilsin, kira durumunu görebilsin diye yönlendireceğim ek sayfa olacak.
+Bootstrapten sadece büyük ortalı bir şekilde görülecek bir resim yapısı aldım ve altınada birkaç yazı ekleyerek
+basit bir görüntü ortaya çıkardım.
+![yenideneme2resim5](https://user-images.githubusercontent.com/77545922/112897029-cb71a580-90e7-11eb-9815-f198d2405997.PNG)
 
