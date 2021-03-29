@@ -81,8 +81,6 @@ Basit bir şekilde giriş gerçekleştirdiğimiz için(sadece test olarak düş�
 - Tüm araçlar veya tüm renkler'e basıldığında diğer component'in butonları resetlenmiyor.
 - Olmayan Renkler gösterilmeyecek. (Renklere çok takılmayın turuncu-yeşil gibi renkleri veritabanına rastgele doldurmuştum .:relieved:) 
 
-:relieved:
-
 ![yenideneme2brandlist](https://user-images.githubusercontent.com/77545922/112862241-3a3a0900-90be-11eb-8bed-a27be5c5b9c5.PNG)
 
 ### 2.1 Resimlerin getirilişi
