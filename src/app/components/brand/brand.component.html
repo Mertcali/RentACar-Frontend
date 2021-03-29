@@ -1,0 +1,14 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<ul class="list-group">
+  <li (click)="resetCurrentBrand()" routerLink="/cars" [class]="getAllCarsClass()" class="list-group-item">Tüm Araçlar</li>
+
+  <li (click)="setCurrentBrand(brand)" routerLink="/cars/brands/{{brand.id}}"
+  *ngFor="let brand of brands" 
+  [class]="getCurrentBrandClass(brand)">
+  {{brand.name}}</li>
+  
+</ul>
+
+<h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz</h5><br><br>  

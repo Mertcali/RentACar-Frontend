@@ -1,0 +1,19 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <table *ngIf="dataLoaded==true" class="table table-dark table-hover">
+    <thead>
+       <tr>
+        <th>Car Id</th>
+        <th>Kiralanan Araç</th>
+        <th>Kira Tarihi</th>
+       </tr>
+    
+    <tr *ngFor="let rental of rentals">
+        <td>{{rental.carId}}</td>
+        <td>{{rental.brandName + " " + rental.carName}}</td>
+        <td>{{rental.rentDate}}</td>
+    </tr>
+</thead>
+  </table>  
