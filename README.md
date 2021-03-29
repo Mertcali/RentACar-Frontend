@@ -79,7 +79,7 @@ Aynı işlemler color tarafında da gerçekleştirildi.
 Basit bir şekilde giriş gerçekleştirdiğimiz için(sadece test olarak düşünülebilir) adım adım ilerliyoruz.
 - Araç ve Color aynı anda seçildiğinde en son seçileni direkt gösteriyor ve diğer seçilen hala seçili gösteriyor.
 - Tüm araçlar veya tüm renkler'e basıldığında diğer component'in butonları resetlenmiyor.
-- Olmayan Renkler gösterilmeyecek. (Renklere çok takılmayın turuncu-yeşil gibi renkleri veritabanına rastgele doldurmuştum. :simple_smile: )
+- Olmayan Renkler gösterilmeyecek. (Renklere çok takılmayın turuncu-yeşil gibi renkleri veritabanına rastgele doldurmuştum.) :simple_smile:
 
 ![yenideneme2brandlist](https://user-images.githubusercontent.com/77545922/112862241-3a3a0900-90be-11eb-8bed-a27be5c5b9c5.PNG)
 
