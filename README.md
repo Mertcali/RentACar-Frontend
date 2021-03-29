@@ -95,8 +95,8 @@ olarak denendi. ImagePath geliyordu.
 + resimlerin gösterilip gösterilmediğini test etmek için 
 cardetailcomponent.html'e  aşağıdaki kodlar eklendi.
 
-    <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" alt="thumbnail" class="img-thumbnail"
-      style="width: 200px">
+        <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg" alt="thumbnail" class="img-thumbnail"
+           style="width: 200px">
 
 bu kod ile linkini koyduğunuz resmi basit bir şekilde gösterebilirsiniz. Detayları bootstrap'te var.
 
