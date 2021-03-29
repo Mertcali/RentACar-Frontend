@@ -63,7 +63,7 @@ app.component.html'de yazılan
 ### 2. Biraz Refactoring ve Resimlerin Getirilişi
 
 **NOT: appcomponent.html'de router-outlet --> bir tarayıcıda link tarafında ..../'tan sonra şu gelirse şuraya git diye belli ettiğimiz yer burası.
-Gideceği yerleri de app-routing.module'da belli ediyoruz. **
+Gideceği yerleri de app-routing.module'da belli ediyoruz.**
 
 + listResponseModel'lar oluşturulup diğer responseModel'lar silindi.
 
