@@ -62,10 +62,10 @@ app.component.html'de yazılan
 
 ### 2. Biraz Refactoring ve Resimlerin Getirilişi
 
-+ listResponseModel'lar oluşturulup diğer responseModel'lar silindi.
-  
 **NOT: appcomponent.html'de router-outlet --> bir tarayıcıda link tarafında ..../'tan sonra şu gelirse şuraya git diye belli ettiğimiz yer burası.
 Gideceği yerleri de app-routing.module'da belli ediyoruz. **
+
++ listResponseModel'lar oluşturulup diğer responseModel'lar silindi.
 
 + Sadece Brand için düşündüğümüz zaman brandcomponent.html için click event ve routeLink oluşturuldu.
 bunun için cardetailservice'e *getbybrandid()* yazıldı
