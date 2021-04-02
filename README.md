@@ -150,7 +150,7 @@ basit bir görüntü ortaya çıkardım.
 ![yenideneme2resim5](https://user-images.githubusercontent.com/77545922/112897029-cb71a580-90e7-11eb-9815-f198d2405997.PNG)
 
 ### 3. Kiralama ve Ödeme işlemleri
-### 3.0
+### 3.1
 + Src-app-pipes oluşturuldu.
 
 Araç-renk-marka için ayrı ayrı pipelar yazıldı
@@ -167,7 +167,7 @@ Arayüz biraz değiştirildi.
 + Açılır kutuların yanına filtrele ve filtreleri temizle butonları eklendi.
 filtrele ile özelliği seçilen araca filtreleri temizle ile anasayfaya dönüyor en basit şekilde.
 *****************************
-### 3.1
+### 3.1.2
 + Detaya git butonu cardetailcomponent'te tamamlandı click event koyuldu routerlink 
 onecardetail'e yönlendirildi
 onecardetailComponent içerisine  kirala butonu tanımlandı.
@@ -181,7 +181,7 @@ app.module'da tanımlandı.
 
 Bu kurulan paketler ile kirala butonuna basıldığında sağ alttan bir bildirim getirilerek
 güzelleştirildi.
-### 3.2
+### 3.1.3
 *****************************
 + Ancak önemli olan durum araç müsait mi sorgusunu gerçekleştirebilmek.Bunun için backend tarafında getrentalbycarid eklenmeli.
 
@@ -208,7 +208,7 @@ Gidilecek sayfayı rentalcomponent.ts'de
 
 + Bu işlem biraz zorladı ancak arkadaşlardan baktığımda backend tarafında isRentable() şeklinde tanımlayıp frontend tarafında kullanmak da güzel bir seçenek gibi duruyor. Sevgili Yusuf pairde anlatarak yaptığı için
 bu yolu tercih ettim.
-### 3.3
+### 3.1.4
 *****************************
 + Fake Banka servisini yazmak için
 backend tarafında FakeCard oluşturuldu.
@@ -253,5 +253,20 @@ Anasayfada listelenen her araca araç müsait mi butonu ekleyerek bir kontrol sa
 
 Projenin bu kısmının Rent bölümünde yaptığı Pair ve paylaştığı kodlar için Yusuf Akkurt'a teşekkürler.
 Ayrıca Payment menüsünde [Erenk1412'ye](https://github.com/Erenk1412/CarRental-Backend) teşekkür ediyorum.
+
+### 3.2 Resimler
+
+3.1 Pipe'ların eklendiği kısım.
+![yenideneme3](https://user-images.githubusercontent.com/77545922/113430805-78e40200-93e3-11eb-8ece-725388c5cb85.PNG)
+
+3.1 Select-option eklendiği kısım.
+![yenideneme3 1](https://user-images.githubusercontent.com/77545922/113430880-987b2a80-93e3-11eb-8dfe-c13f955371b7.PNG)
+
+3.1.3 Kiralama sorgusu
+![yenideneme3rental](https://user-images.githubusercontent.com/77545922/113430975-bba5da00-93e3-11eb-966c-69643bcca49f.PNG)
+
+3.1.4 Ödeme İşlemi
+![yenideneme3 1payment](https://user-images.githubusercontent.com/77545922/113431045-d415f480-93e3-11eb-8aba-692f15a12544.PNG)
+
 
 
