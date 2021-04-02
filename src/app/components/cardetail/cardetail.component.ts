@@ -73,10 +73,13 @@ export class CardetailComponent implements OnInit {
           this.dataLoaded=true;
         })
       }
+<<<<<<< HEAD
       setCurrentCar(car:CarDetail){
         this.currentCar=car;
       }
 
 
+=======
+>>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
 
 }
