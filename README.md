@@ -149,3 +149,106 @@ Bootstrapten sadece büyük ortalı bir şekilde görülecek bir resim yapısı 
 basit bir görüntü ortaya çıkardım.
 ![yenideneme2resim5](https://user-images.githubusercontent.com/77545922/112897029-cb71a580-90e7-11eb-9815-f198d2405997.PNG)
 
+### 3 Kiralama ve Ödeme işlemleri
++ Src-app-pipes oluşturuldu.
+
+Araç-renk-marka için ayrı ayrı pipelar yazıldı
+Araçlar MarkaAdı+AraçAdı şeklinde yazıldığı için pipe'da toplama işlemi yapıldı.
+
++ Pipe'dan daha sonra
+Html-selectoption ile car-brand ve color için marka, renk veya özel olarak tüm araçlar listesinden
+araç seçimi yapılabilmesi tanımlandı. Seçilen filtreye göre araç ekrana geliyor.
+
++ Pipe'lı halini comment haline getirdim. Hem search - hem select şeklinde yazabilirsiniz html'inizi
+ancak ben sadece select option ile yazdım. pipe filtresine sonradan ihtiyaç duymadım o yüzden.
+Arayüz biraz değiştirildi. 
+
++ Açılır kutuların yanına filtrele ve filtreleri temizle butonları eklendi.
+filtrele ile özelliği seçilen araca filtreleri temizle ile anasayfaya dönüyor en basit şekilde.
+
++ Detaya git butonu cardetailcomponent'te tamamlandı click event koyuldu routerlink 
+onecardetail'e yönlendirildi
+onecardetailComponent içerisine  kirala butonu tanımlandı.
+
++ npm install @angular/animations
+npm install ngx-toastr      
+
+ile paketler kuruldu
+
+toastr angular.json'da tanımlandı
+app.module'da tanımlandı.
+
+Bu kurulan paketler ile kirala butonuna basıldığında sağ alttan bir bildirim getirilerek
+güzelleştirildi.
+
++ Ancak önemli olan durum araç müsait mi sorgusunu gerçekleştirebilmek.Bunun için backend tarafında getrentalbycarid eklenmeli.
+
+GetRentalByCarId IRentalService'e 
+
+                IDataResult<Rental> GetRentalByCarId(int carId);
+               
+şeklinde eklendi. Detaylı bir bilgi almayacağımız için, işlemlerimizde returndate ve rentDate kullanacağımız için
+bu şekilde döndürdük verimizi. Bu işlemin manager'ını ve api controllerda httpget komutunu yazdık.
+
++ Bu servis eklendikten sonra backend tarafında rental.add işlemi için
+
+      var result = _rentalDal.GetAll(r => r.CarId == rental.CarId && (r.ReturnDate == null || r.ReturnDate < DateTime.Now)).Any();
+
+eklendi.
+
++ Frontend tarafında rentalcomponent.ts ve html [Yusuf Akkurt'un](https://github.com/YusufAkkurt/rent-a-car-front/tree/master/src/app) github'ından alındı. Yapılan işlem özet olarak arabanın müsaitliği kontrol ediliyor, müsaitse set edilip ödeme sayfasına yönlendiriliyor.
+
+Gidilecek sayfayı rentalcomponent.ts'de 
+
+        return this.router.navigate(['/cars']);
+        
+şeklinde ödeme işlemi yönlendiriyorun altında belirtebilirsiniz.
+
++ Bu işlem biraz zorladı ancak arkadaşlardan baktığımda backend tarafında isRentable() şeklinde tanımlayıp frontend tarafında kullanmak da güzel bir seçenek gibi duruyor. Sevgili Yusuf pairde anlatarak yaptığı için
+bu yolu tercih ettim.
+
++ Fake Banka servisini yazmak için
+backend tarafında FakeCard oluşturuldu.
+
++ Sırasıyla Entity-DataAccess-Business-API katmanları dolduruldu.
++ Çalışması için business-dependencyresolvers kısmında
+
+            builder.RegisterType<FakeCardManager>().As<IFakeCardService>().SingleInstance();
+            builder.RegisterType<EfFakeCardDal>().As<IFakeCardDal>().SingleInstance();
+
+şeklinde çözmeyi unutmayın. 
+
+Ayrıca kart eklemek için Fluentvalidation tarafında kurallarınızı eklemeyi unutmayın. En basit akla gelenkurallarım
+
+            RuleFor(c => c.CardCVV).NotEmpty().MinimumLength(3);
+            RuleFor(c => c.CardNumber).NotEmpty().MinimumLength(12);
+            RuleFor(c => c.NameOnCard).NotEmpty();
+            RuleFor(c => c.MoneyInCard).GreaterThanOrEqualTo(0);
+şeklinde
+
++ SQL Tablosu oluşturuldu ve  DbSet'ten tanımlandı
+postman'den kart eklendi.
+
+FakeCard kısmına UserId eklenip kullanıcıyla bağdaştırılabilir. Ancak şu an için basit bir servis denediğim için
+gerek duymadım.
+
++ Frontend tarafında fakeCard modeli-servisi component'i oluşturuldu
+component'i ve html'i yazıldı.
+
+### Bu kısım beni biraz zorladı. İleriki zamanlarda buraya dönüp bakacağım şu an için eksikler şu şekilde:
+
+- Arayüz tasarımları tamamen eksik en son proje bittikten sonra bunlarla uğraşılacak.
+
+- Brand ve Color için aynı anda arama eklenmedi. Ama backend tarafında bir fonksiyon tanımlayarak bu kolayca yapılabilir.
+Kiralama ve ödeme ile çok uğraştığım için buna bakmadım ama artık ilerlemek istiyorum çok takıldım burada.
+
+- Kiralama menüsünde sadece tarih seçilecek 2 ekran getirildi. Aracın müsaitliğini kontrol etmek gibi bir durum.
+Burasıyla payment menüsü birleştirilebilir, araç müsaitliğini kontrol et gibi farklı bi şekilde bakış getirilebilir.
+Anasayfada listelenen her araca araç müsait mi butonu ekleyerek bir kontrol sağlanabilir.
+
+- Payment tarafında ise eksik bilgi girildiğinde uyarı veriyor ancak yanlış bilgi girildiğinde uyarı tanımlanmadı.
+
+Projenin bu kısmının Rent bölümünde yaptığı Pair ve paylaştığı kodlar için Yusuf Akkurt'a teşekkürler.
+Ayrıca Payment menüsünde [Erenk1412'ye](https://github.com/Erenk1412/CarRental-Backend) teşekkür ediyorum.
+
+
