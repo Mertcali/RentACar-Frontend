@@ -149,7 +149,8 @@ Bootstrapten sadece büyük ortalı bir şekilde görülecek bir resim yapısı 
 basit bir görüntü ortaya çıkardım.
 ![yenideneme2resim5](https://user-images.githubusercontent.com/77545922/112897029-cb71a580-90e7-11eb-9815-f198d2405997.PNG)
 
-### 3 Kiralama ve Ödeme işlemleri
+### 3. Kiralama ve Ödeme işlemleri
+### 3.0
 + Src-app-pipes oluşturuldu.
 
 Araç-renk-marka için ayrı ayrı pipelar yazıldı
@@ -165,22 +166,22 @@ Arayüz biraz değiştirildi.
 
 + Açılır kutuların yanına filtrele ve filtreleri temizle butonları eklendi.
 filtrele ile özelliği seçilen araca filtreleri temizle ile anasayfaya dönüyor en basit şekilde.
-
+*****************************
+### 3.1
 + Detaya git butonu cardetailcomponent'te tamamlandı click event koyuldu routerlink 
 onecardetail'e yönlendirildi
 onecardetailComponent içerisine  kirala butonu tanımlandı.
 
 + npm install @angular/animations
-npm install ngx-toastr      
-
-ile paketler kuruldu
+npm install ngx-toastr   ile paketler kuruldu
 
 toastr angular.json'da tanımlandı
 app.module'da tanımlandı.
 
 Bu kurulan paketler ile kirala butonuna basıldığında sağ alttan bir bildirim getirilerek
 güzelleştirildi.
-
+### 3.2
+*****************************
 + Ancak önemli olan durum araç müsait mi sorgusunu gerçekleştirebilmek.Bunun için backend tarafında getrentalbycarid eklenmeli.
 
 GetRentalByCarId IRentalService'e 
@@ -206,7 +207,8 @@ Gidilecek sayfayı rentalcomponent.ts'de
 
 + Bu işlem biraz zorladı ancak arkadaşlardan baktığımda backend tarafında isRentable() şeklinde tanımlayıp frontend tarafında kullanmak da güzel bir seçenek gibi duruyor. Sevgili Yusuf pairde anlatarak yaptığı için
 bu yolu tercih ettim.
-
+### 3.3
+*****************************
 + Fake Banka servisini yazmak için
 backend tarafında FakeCard oluşturuldu.
 
