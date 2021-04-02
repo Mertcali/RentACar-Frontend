@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-<<<<<<< HEAD
 import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/cardetail';
 import { RentalDetail } from 'src/app/models/rentalDetail';
 import { CardetailService } from 'src/app/services/cardetail.service';
 import { RentalService } from 'src/app/services/rental.service';
-=======
-import { CarDetail } from 'src/app/models/cardetail';
-import { CardetailService } from 'src/app/services/cardetail.service';
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
 
 @Component({
   selector: 'app-onecardetail',
@@ -18,7 +13,6 @@ import { CardetailService } from 'src/app/services/cardetail.service';
 })
 export class OnecardetailComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor(private cardetailService:CardetailService, private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
     private rentService:RentalService
@@ -32,13 +26,6 @@ export class OnecardetailComponent implements OnInit {
 
   
 
-=======
-  constructor(private cardetailService:CardetailService, private activatedRoute:ActivatedRoute) { }
-  cars:CarDetail[]=[]
-  dataLoaded=false;
-  imageBasePath="https://localhost:44378"
-
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
     if(params["carId"]){
@@ -63,13 +50,10 @@ export class OnecardetailComponent implements OnInit {
         this.dataLoaded=true;
       })
     }
-<<<<<<< HEAD
     rentTest(car:CarDetail){
       this.toastrService.success("Kiralandı",car.brandName + " " + car.carName)
     }
 
 
     
-=======
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
 }

@@ -14,7 +14,6 @@ import { RentalComponent } from './components/rental/rental.component';
 import {CardetailComponent} from './components/cardetail/cardetail.component';
 import { CarComponent } from './components/car/car.component';
 import { OnecardetailComponent } from './components/onecardetail/onecardetail.component';
-<<<<<<< HEAD
 import { BrandFilterPipePipe } from './pipes/brand-filter-pipe.pipe';
 import { ColorFilterPipePipe } from './pipes/color-filter-pipe.pipe';
 import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
@@ -22,8 +21,6 @@ import { PaymentComponent } from './components/payment/payment.component';
 
 import {ToastrModule} from "ngx-toastr"
 import { DatePipe } from '@angular/common';
-=======
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
 
 @NgModule({
   declarations: [
@@ -35,16 +32,12 @@ import { DatePipe } from '@angular/common';
     RentalComponent,
     CardetailComponent,
     CarComponent,
-<<<<<<< HEAD
     OnecardetailComponent,
     BrandFilterPipePipe,
     ColorFilterPipePipe,
     CarFilterPipePipe,
     PaymentComponent,
     
-=======
-    OnecardetailComponent
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
   ],
   imports: [
     BrowserModule,

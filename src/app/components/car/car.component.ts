@@ -13,10 +13,7 @@ export class CarComponent implements OnInit {
   
   currentCar:CarDetail;
   nullCar:CarDetail;
-<<<<<<< HEAD
   filterText="";
-=======
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
   dataLoaded=false;
 
   constructor(private cardetailService:CardetailService) { }
@@ -56,15 +53,9 @@ export class CarComponent implements OnInit {
   resetCurrentCar(){
     this.currentCar=this.nullCar;
   }
-<<<<<<< HEAD
   
 }
 
 
 
 
-=======
-}
-
-
->>>>>>> 7a9d488d8049f57d043132d29c7bb169f66dd8ac
