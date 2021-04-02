@@ -1,5 +1,6 @@
 # Angular ile RentACar-Frontend 
 ## :mag:Başlarken
+# ÖNEMLİ NOT: PUSHLARKEN PROJEDE BİR SIKINTI MEYDANA GELDİ VE ŞU AN ÇALIŞMIYOR DİKKAT EDİN BAŞTAN YAZMAYA BAŞLAYACAĞIM.
 
 Web uygulamaları geliştirmek için kullandığımız, Google tarafından geliştirilen bir framework.
 
@@ -267,6 +268,8 @@ Ayrıca Payment menüsünde [Erenk1412'ye](https://github.com/Erenk1412/CarRenta
 
 3.1.4 Ödeme İşlemi
 ![yenideneme3 1payment](https://user-images.githubusercontent.com/77545922/113431045-d415f480-93e3-11eb-8aba-692f15a12544.PNG)
+
+
 
 
 
