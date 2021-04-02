@@ -173,6 +173,7 @@ onecardetail'e yönlendirildi
 onecardetailComponent içerisine  kirala butonu tanımlandı.
 
 + npm install @angular/animations
+
 npm install ngx-toastr   ile paketler kuruldu
 
 toastr angular.json'da tanımlandı
