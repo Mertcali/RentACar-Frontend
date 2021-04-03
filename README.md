@@ -249,10 +249,10 @@ Kiralama ve ödeme ile çok uğraştığım için buna bakmadım ama artık iler
 Burasıyla payment menüsü birleştirilebilir, araç müsaitliğini kontrol et gibi farklı bi şekilde bakış getirilebilir.
 Anasayfada listelenen her araca araç müsait mi butonu ekleyerek bir kontrol sağlanabilir.
 
-- Payment tarafında ise eksik bilgi girildiğinde uyarı veriyor ancak yanlış bilgi girildiğinde uyarı tanımlanmadı.
+- Payment tarafında ise kart bilgilerinin doğruluğu kontrol ediliyor. Kart onaylandıktan sonra bir detaylar sayfası
+ ve paranın eksileceği kısım tanımlanmadı
 
 Projenin bu kısmının Rent bölümünde yaptığı Pair ve paylaştığı kodlar için Yusuf Akkurt'a teşekkürler.
-Ayrıca Payment menüsünde [Erenk1412'ye](https://github.com/Erenk1412/CarRental-Backend) teşekkür ediyorum.
 
 ### 3.2 Resimler
 
@@ -266,7 +266,8 @@ Ayrıca Payment menüsünde [Erenk1412'ye](https://github.com/Erenk1412/CarRenta
 ![yenideneme3rental](https://user-images.githubusercontent.com/77545922/113430975-bba5da00-93e3-11eb-966c-69643bcca49f.PNG)
 
 3.1.4 Ödeme İşlemi
-![yenideneme3 1payment](https://user-images.githubusercontent.com/77545922/113431045-d415f480-93e3-11eb-8aba-692f15a12544.PNG)
+![yenideneme3 5payment](https://user-images.githubusercontent.com/77545922/113479790-b30fdb00-9499-11eb-8d0f-43c7c480329f.PNG)
+
 
 
 
