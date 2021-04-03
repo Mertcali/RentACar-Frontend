@@ -1,6 +1,5 @@
 # Angular ile RentACar-Frontend 
 ## :mag:Başlarken
-# ÖNEMLİ NOT: PUSHLARKEN PROJEDE BİR SIKINTI MEYDANA GELDİ VE ŞU AN ÇALIŞMIYOR DİKKAT EDİN BAŞTAN YAZMAYA BAŞLAYACAĞIM.
 
 Web uygulamaları geliştirmek için kullandığımız, Google tarafından geliştirilen bir framework.
 
