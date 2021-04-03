@@ -19,21 +19,4 @@ export class FakeCardService {
     return this.httpClient.post<ResponseModel>(newPath,fakeCard)
   }
 
-
-  getCardByNumber(cardNumber:string):Observable<ListResponseModel<FakeCard>>{
-    let newPath = this.apiUrl + "getbycardnumber";
-    return this.httpClient.get<ListResponseModel<FakeCard>>(newPath);
-  }
-
-
-  updateCard(fakeCard:FakeCard): Observable<ResponseModel>{
-    let newPath = this.apiUrl + "update";
-    return this.httpClient.post<ResponseModel>(newPath,fakeCard)
-  }
-
-  addCard(fakeCard:FakeCard):Observable<ResponseModel>{
-    let newPath = this.apiUrl +"add";
-    return this.httpClient.post<ResponseModel>(newPath, fakeCard)
-  }
-
 }
