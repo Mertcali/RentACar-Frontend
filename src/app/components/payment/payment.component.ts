@@ -4,11 +4,9 @@ import { FakeCardService } from 'src/app/services/fake-card.service';
 import {
   FormGroup,
   FormBuilder,
-  FormControl,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RentalService } from 'src/app/services/rental.service';
+import { Router } from '@angular/router';
 import { Rental } from 'src/app/models/rental';
 
 @Component({
@@ -24,8 +22,6 @@ export class PaymentComponent implements OnInit {
     private fakeCardService: FakeCardService,
     private toastrService: ToastrService,
     private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private rentalService: RentalService,
     private router: Router
   ) {}
 

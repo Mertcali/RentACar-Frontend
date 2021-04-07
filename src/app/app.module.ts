@@ -21,6 +21,9 @@ import { PaymentComponent } from './components/payment/payment.component';
 
 import {ToastrModule} from "ngx-toastr"
 import { DatePipe } from '@angular/common';
+import { CarAddComponent } from './components/add_operations/car-add/car-add.component';
+import { BrandAddComponent } from './components/add_operations/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/add_operations/color-add/color-add.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { DatePipe } from '@angular/common';
     ColorFilterPipePipe,
     CarFilterPipePipe,
     PaymentComponent,
+    CarAddComponent,
+    BrandAddComponent,
+    ColorAddComponent,
     
   ],
   imports: [

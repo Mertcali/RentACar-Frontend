@@ -1,58 +1,102 @@
-<div class="card">
-  <div class="card-header">
-    <h5>Kart Bilgileri</h5>
-   </div>
-
-    <div class="card-header">
-       <form [formGroup]="paymentForm">
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Kart Bilgileri</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="paymentForm">
+          <div class="mb-3">
             <label for="nameOnCard"> İsim </label>
-            <input type="text"id="carId" formControlName="nameOnCard"
-            class="form-control" placeholder="İsim">
-        </form>
- 
-           <form [formGroup]="paymentForm">
-             <label for="lastNameOnCard"> Soyisim </label>
-             <input type="text"id="lastNameOnCard" formControlName="lastNameOnCard"
-             class="form-control" placeholder="Soyisim">
-         </form>
-         
-      <form [formGroup]="paymentForm">
-          <label for="cardNumber">Kart Numarası</label>
-          <input type="text" id="cardNumber"  formControlName="cardNumber" 
-          class="form-control" placeholder="kart numarası ">
-      </form>
-
-      <form [formGroup]="paymentForm">
-          <label> Son Kullanım Tarihi (AA/YY)</label>
-          <div class="row">
-             <div class="col-md-2">
-              <input type="text" id="expirationDateMonth"  formControlName="expirationDateMonth" max="5"
-              class="form-control" >
-             </div>
-
-             <div class="col-md-2">
-
-              <input type="text" id="expirationDateYear"   formControlName="expirationDateYear" max="5"
-              class="form-control">
-             </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="nameOnCard"
+                formControlName="nameOnCard"
+                class="form-control"
+                placeholder="İsim"
+              />
+            </div>
           </div>
 
-         
-      </form>
+          <div class="mb-3">
+            <label for="lastNameOnCard"> Soyisim </label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="lastNameOnCard"
+                formControlName="lastNameOnCard"
+                class="form-control"
+                placeholder="Soyisim"
+              />
+            </div>
+          </div>
 
-          
-      <form [formGroup]="paymentForm">
-          <label for="cardCVV">CVV</label>
-          <input type="text" id="cardCVV"  formControlName="cardCVV" 
-          class="form-control" placeholder="CVV  ">
-      </form>
+          <div class="mb-3">
+            <label for="cardNumber"> Kart Numarası </label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="cardNumber"
+                formControlName="cardNumber"
+                class="form-control"
+                placeholder="Kart numarası"
+              />
+            </div>
+          </div>
 
+          <div class="mb-3">
+            <label>Son Kullanım Tarihi (AA/YY) </label>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="expirationDateMonth"
+                    formControlName="expirationDateMonth"
+                    class="form-control"
+                    placeholder="00"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="expirationDateYear"
+                    formControlName="expirationDateYear"
+                    class="form-control"
+                    placeholder="00"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cardCVV"> CVV </label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="cardCVV"
+                formControlName="cardCVV"
+                class="form-control"
+                placeholder="CVV"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button
+          type="button btn-fill btn-dark"
+          (click)="paymentCheck()"
+          class="btn btn-info"
+        >
+          Öde
+        </button>
+      </div>
     </div>
-  
-
-
-  <div class="card-footer">
-   
-      <button type="button" (click)="paymentCheck()"   class="btn btn-info"> Öde</button>
   </div>
 </div>
