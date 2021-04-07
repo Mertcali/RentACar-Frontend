@@ -268,6 +268,55 @@ Projenin bu kısmının Rent bölümünde yaptığı Pair ve paylaştığı kodl
 3.1.4 Ödeme İşlemi
 ![yenideneme3 5payment](https://user-images.githubusercontent.com/77545922/113479790-b30fdb00-9499-11eb-8d0f-43c7c480329f.PNG)
 
+### 4.0 Araç-Renk-Marka Ekle, Güncelle İşlemleri
+
+- Öncelikle bu işlemler için 
+Reactive Formlar kullanacağız 
+FormsModule  ve ReactiveFormsModule'ün import edilmesi gerekiyor. Payment tarafında da formlarla çalışmak için
+yapmıştık bu işlemi.
+
+
+**NOT :Bu kısımda araç marka ve renk için ekleme ve güncelleme işlemlerini sadece ayrı bir pathte test ettim. Login, register işlemleri de tamamlandıktan sonra bir yönetici sayfası oluşturup bu işlemleri sadece onlara özel kılmayı düşündüğüm için sadece ayrı bir path oluşturup işlemleri test ettim.**
+
+- Ekleme ve güncelleme işlemlerinin servisleri her nesnenin servisine yazıldı.
+
+- Components
+add-operations klasörü oluşturuldu.
+Car-add component'i oluşturuldu.(aynı işlemler brand ve color için de tekrar edildi.)
+
+- CarAddForm bir FormGroup olarak tanımlandı. Daha sonra bir createAddForm() oluşturularak Html'de form tarafından alınan inputları mapleyeceğimiz ve post ile göndereceğimiz verileri burada belirttik. Bunun veritabanınızdaki veriler şeklinde olması gerekiyor yoksa uyumsuzluk meydana gelir. Ayrıca veritabanında girilen ValidationRules tarafındaki kurallarınıza uymanız lazım ekleme işlemini yaparken. Benim Car nesnem için 
+
+       createCarAddForm() {
+        this.carAddForm = this.formBuilder.group({
+      brandId: ['', Validators.required],
+      carName: ['', Validators.required],
+      colorId: ['', Validators.required],
+      modelYear: ['', Validators.required],
+      dailyPrice: ['', Validators.required],
+      description: ['', Validators.required],
+    });
+  }
+  
+şeklinde. Devamında ise form düzgün doldurulmuş ve geçerli ise bunu bir model'e atayarak kodumuza devam ediyoruz.
+
+        if (this.carAddForm.valid) {
+      let carModel = Object.assign({}, this.carAddForm.value);
+      
+Şeklinde devam eden kodta eğer bu şekildeyse ekleme işlemi gerçekleştiriliyor değilse form eksik uyarısı toastr ile gösteriliyor.
+
+- Aynı işlemler createCarUpdateForm() şeklinde tekrarlanıyor. Tek fark update tarafında CarId'nin ne olduğunun bilinmesi gerektiği için id de createCarUpdateForm()'a eklendi. 
+ve update() fonksiyonu da yazıldı. 
+
+- Her biri için app-routing-module tarafında pathler oluşturuldu. Pathlere manuel gidilerek işlemler test edildi.
+
+Bütün işlemler test edildi ve çalışır vaziyete geldi.
+
+### 4.1 Resimler
+Resimler için oluşturulan path'te işlemlerin testi
+![yenideneme4 1colorsaddupdate](https://user-images.githubusercontent.com/77545922/113812632-19854980-9777-11eb-9f1b-5c9cbf2daf13.PNG)
+
+
+
 
 
 
