@@ -1,6 +1,6 @@
 <body class="text-center">
   <main class="form-signin">
-    <form>
+    <form [formGroup]="loginForm">
       <img class="mb-4" alt="" width="72" height="57" />
       <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
 
@@ -30,7 +30,7 @@
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">
+      <button class="w-100 btn btn-lg btn-primary" (click)="login()">
         Giriş Yap
       </button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>

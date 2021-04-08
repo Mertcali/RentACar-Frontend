@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { OnecardetailComponent } from './components/onecardetail/onecardetail.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"", pathMatch:"full",component:CardetailComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
 
   {path:"payment/:carId",component: PaymentComponent},
 
-  {path:"car/add",component:CarAddComponent},
+  {path:"car/add",component:CarAddComponent, canActivate:[LoginGuard]},
   {path:"color/add", component:ColorAddComponent},
   {path:"brand/add",component:BrandAddComponent},
 
