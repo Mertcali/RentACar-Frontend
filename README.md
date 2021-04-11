@@ -317,8 +317,157 @@ Resimler için oluşturulan path'te işlemlerin testi
 
 
 
+### 5.0 Login-Register-Payment-Findeks
+
+### 5.1 Login İşlemleri.
+
+- Login işlemleri için login.component oluşturuldu. Giriş Ekranı için bootstrapten sign-in modeli alındı. Login path'i oluşturuldu.
+- Login kontrolünden geçtikten sonra login olan kişinin tanımlı kalabilmesi için authService oluşturuldu.
+login() ve isAuthenticated() işlemleri yazıldı.
+- LoginModel, tokenModel, singleResponseModel oluşturuldu.
+- Src-app-interceptors oluşturuldu. Auth-interceptor oluşturuldu. Interceptor'ın devreye girebilmesi için app-guards oluşturuldu. ve app-routing-module'a guard eklendi.
+- 
+***********************************
+
+### 5.1.1 Findex
+
+- Öncelikle backend tarafında Car'a MinFindex tanımlandı. Database'de ise araçların minFindex değerleri girildi.
+- Frontend tarafında model'e minFindex eklendi, onecardetail'de minimum findex değeri gösterildi.
+
+Kullanıcı findexi oluşturmak ve kontrol edebilmek için ise
+- Backend tarafında sırasıyla findex entity-ifindexdal-effindexdal-ifindexservice-findexmanager oluşturuldu. Dependency resolvers'ta bağımlılığı çözüldü.
+- Sql tablosu oluşturuldu. UserId ile bağdaştırıldı. 
+- RentACarContext'te DbSet'i belirtildi.
+- Api Controller'ı yazıldı.
+
+**Not: Frontend tarafında userName gibi diğer özelliklerle beraber findex puanını da çekmek için CustomerDetailDTO oluşturuldu. ICustomerDal-EfCustomerDal-Servis-Manager DTO için düzenlendi. Bu işlemden sonra postmanden verilerin istenildiği gibi gelip gelmediği kontrol edildi.**
+
+![sondeneme1](https://user-images.githubusercontent.com/77545922/114316064-8cd9e300-9b0a-11eb-9ad5-278e3a3fd568.PNG)
 
 
+***********************************
+
+- Frontend tarafında customerDetail, findex modeli oluşturuldu. Customerservice düzenlendi.
+
+**Burada önemli olan kullanıcı login olduğu zaman kullanıcının maili aracılığı ile userı set edebilmek. Örneğin kullanıcı login oldu localstorage'ta bir tokenı oluşuyor ancak benim kullanıcının findex puanını veya başka özellikleri alıp, componentlerde kullanmam lazım. Peki bunu nasıl yapacağım? Localstorageservis burada devreye giriyor.**
+
+- Localstorageservis oluşturuldu. Fonksiyonları yazıldı. 
+- Oluşturduğumuz localstorageservis ile login ekranında getCustomerWithMail() fonksiyonu ile kullanıcının id'sini set ettik.
+- Önemli olan userId'ye ulaşmamızdı zaten. customerDetailComponent'imizde gerekli her şeyi oluşturmuştuk. Set
+ettiğimiz bu userId ile onecardetail kısmında önce bu id'yi getItem() ile aldık ve userId'nin findexScore'u ile aracın
+minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme yetkisini vermiş olduk.
+
+**Not: Onecardetail'in html'inde isCarRentable() fonksiyonuna dataLoaded2=true diye tanılama yaptım ve butonu "araç Müsait Mi?" olarak değiştirdim. Araç müsait mi butonuna basıldığında öncelikle findex puanı karşılaştırması yapılıyor. Bu karşılaştırmanın ardından eğer puan uygunsa rental component'te oluşturduğum tarih seçme ekranını altına getirdim. Araç müsait mi kontrolü için tarih seçimleri yapılıp sorgu yapılıyor.**
+
+LocalStorageGelenId            |  FindeksTest
+:-------------------------:|:-------------------------:
+![sondeneme2](https://user-images.githubusercontent.com/77545922/114316140-f9ed7880-9b0a-11eb-9783-8d8b87caa04c.PNG)
+  |  ![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG)
+
+
+***********************************
+
+### 5.1.2 Navbar
+
+- Navbar düzenlemesi için bootstrap'in examples bölümünde headerslardan örnek alarak yapabilirsiniz. Navbarda butonların yerleri düzenlendikten sonra html'de 
+-- checkLogin()
+-- getUsersById()
+-- logout() tanımlandı.
+
+- Html'de checkLogin() navbarın görüntü sorgulayıcısı olarak kullanılacak. Eğer kullanıcı loginse ismi gözükecek ve ismine tıklandığında profil-çıkış yap butonları gelecek şekilde bir dropdown gelecek. Eğer login değilse giriş yap ve kayıt ol butonlarıyla navbar bizi karşılayacak.
+
+***********************************
+### 5.1.3 Brand-Color
+
+Daha önceki işlemlerde es geçtiğim marka ve brand'i birlikte sorgulama işlemini burada tamamladım.
+
+- Backend tarafında carmanager'a getcardetailsfiltered() yazıldı. Api'ye eklendi.
+- Frontend tarafında cardetail.service'e eklendi. cardetail.component'e if koşuluyla beraber eklendi.
+- app-routing-module'da yolu belirtildi.
+- brand-color birlikte kontrolü için component'i oluşturuldu.
+- app.component.html'de brand ve color kaldırıldı.<app-brand-color> eklendi.
+
+***********************************
+
+### 5.1.4 Profil Görüntülenmesi
+
+customer.component kişinin profilini görüntülemesi için açılacak sayfa olarak düzenlendi. 
+- localstorage'ta id yakalanarak user'ın özellikleri profile getirildi. Şu an için html'de let ile user'ı dönüyorum. Haliyle tek veri dönüyorum ancak kodlar refactor edilirken serviste listResponseModel yerine singleResponseModel'e döndürülecek. Yine tek veri gelecek ancak daha okunur ve daha düzgün çalışan bir kod olacak.
+
+- Güncellemelerin yapılabilmesi içni ise customer klasörüne customer-update klasörü eklendi. car-update gibi yaptığımız işlemlerin aynısını yaptım. Oluşturduğum formda kullanıcı idsini localstorage'tan aldım.
+- Burada güncelleme yaparken User gönderiyoruz ancak kayıt olurken passwordumuzu passwordHash ve Salt olarak kaydetmiştik.
+Bu kısımda eksikler var tamamlanacak.
+
+***********************************
+
+### 5.1.5 Ödeme Ekranı Düzenlemeleri, Ödeme Kontrolleri ve Rent Ekleme
+
+- Kişinin kayıtlı kartlarını görebilmesi için backend tarafında fakeCard'a daha sonra veritabanında kartlara userId eklendi. Böylece kartlar bir kullanıcıya atanmış oldu. Servis ve Managerları yazıldı.(Serviste List döndürmemiz lazım çünkü bir kişinin birden fazla kartı olabilir. Bu işlemle kullanıcının kayıtlı kartlarını ekrana getirebiliriz.)
+- Api controller'ı yazıldı, postman'de testi yapıldı. 
+- Kartlardaki para değişkeni ile karttaki paranın yetip yetmediği kontrol edilecek ve ödeme sonrası azalma sağlanacak.
+- frontend tarafında fakeCardServis'e getCardByUserId() ve add() yazıldı.
+
+***********************************
+- Eğer birden fazla aracı aynı anda kiralama gibi bir durum düşünseydik, bir sepet düşünüp sepete ekle ile ekleme işlemi yapar ve ödeme ekranında sepeti getir kullanarak ödemeyi tamamlardık. Ancak biz tek rental taşıyacağımız için 
+
+           JSON.parse()
+           JSON.stringify() 
+    
+ dan yararlanıcaz. Rental tarafında route ile /payment yapıp, payment sayfamıza giderek sadece kartın varlığını kontrol etmiştik. Ancak bir ödeme almamış ve kira eklememiştik. Şu an approutingmodule'da paymentcomponent'imize giden yolu payment/:rental yapıyor ve rentalimizden payment'a giden rotamızı 
+ 
+            return this.router.navigate(['payment/' + JSON.stringify(this.rental)]);
+            
+şeklinde değiştiriyoruz.
+
+- Payment kısmında bu şekilde gelen bir rentali alabilmek için ise bu şekilde:
+
+      ngOnInit(): void {
+      this.activatedRoute.params.subscribe((params)=>{
+       if(params['rental']){
+        this.createPaymentForm();
+        this.rental=JSON.parse(params['rental'])
+        console.log(this.rental)
+        this.getCards();
+      }
+    })
+  } 
+  
+  rental değişkenimize gelen rentali atamış oluyoruz ve klasik kart kontrolü işlemlerinden sonra kira ekleme işlemini paymentCheck'in içine yazıyoruz.
+  
+**Eksikler:
+**Kartı istenilen isme göre kaydetme işlemi getirilebilir.
+**Mevcut kartı güncelleme getirilebilir.
+**Bu Kart ile Öde butonu aktif hale getirilmedi.**
+
+  
+- Ödeme işleminde fiyat kıyaslaması için getCarDetailsById() ile rental'den gelen carId'yi kullanarak araç detaylarımızı getirdik. PaymentCalculator() ile de günlük araç fiyatını total günle çarparak total fiyatı bulduk.
+
+**Eksikler:
+**Ödeme özet sayfası oluşturulabilir.**
+
+**NOT: paymentCalculator() yazdıktan sonra NaN(NotANumber) döndüren arkadaşlar, bu kodların çalışma sırasında bir sıkıntıdan dolayı olabilir. Şu şekilde basit bir fotoğrafla anlatabilirim galiba.**
+
+
+**Konsola baktığınızda paymentCalculator'da dönen işleme daha carDetail gitmediği için NaN dönüyor. Ancak carDetail gittikten sonra gördüğünüz gibi ödeme tutarını döndürebiliyor.**
+
+- Frontend tarafında para kontrolü gerçekleştirildi. Ödeme onaylandıysa para yeterliyse rental ekleniyor. Para kontrolü bir fonksiyona atanacak ancak aşağıdaki işlemler tamamlandıktan sonra.
+
+**Eksikler:**Kiradan sonra findex puanının yükselmesi ve karttaki paranın azalması daha eklenmedi.
+
+**Diğer sayfalarda listenin gitmesi giderilecek.
+**Kartı kaydetme checkbox'ı eklendi ancak şöyle bir mantık hatası var. Benim yazdığım kodta
+veritabanında olmayan kartla ödeme yapılamıyor. Ödeme yapılamadığı için kart kaydedilemiyor.(isterde 
+ödeme alındıktan sonra kartı kaydet işleminin yapılması). Bu yüzden bu kısımda tekrar düzenlemeler yapılacak.**
+
+### 5.2 Final Ve Resimler
+
+Genel olarak eksiklerin hepsi gidermeye çalışacağım ve her geçen gün bu uygulamayla uğraşarak geliştirmeye çalışacağım. Bu projeye başladığımda web geliştirmenin en ufak bir noktasını dahi bilmiyordum. Öğrenmesi, uygulaması çok keyifli. Ancak vaktim biraz dar. Ek olarak 
+**Yönetici paneli eklenebilir.
+**Homepage eklenebilir.
+
+Bunların hepsi ilk akla gelen eksikler. Bunları tamamlarken bile belki aklıma farklı şeyler gelecek. Dediğim gibi her geçen gün aklıma gelenleri bu uygulamaya getirmeyi deneyeceğim öncelikli olarak bu eksikleri. 
+
+Ödeme ekranındaki kiralama işlemi ise aşağıdaki gibi:
 
 
 
