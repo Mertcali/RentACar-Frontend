@@ -319,14 +319,15 @@ Resimler için oluşturulan path'te işlemlerin testi
 
 ### 5.0 Login-Register-Payment-Findeks
 
-### 5.1 Login İşlemleri.
+### 5.1 Login ve Register İşlemleri.
 
 - Login işlemleri için login.component oluşturuldu. Giriş Ekranı için bootstrapten sign-in modeli alındı. Login path'i oluşturuldu.
 - Login kontrolünden geçtikten sonra login olan kişinin tanımlı kalabilmesi için authService oluşturuldu.
 login() ve isAuthenticated() işlemleri yazıldı.
 - LoginModel, tokenModel, singleResponseModel oluşturuldu.
 - Src-app-interceptors oluşturuldu. Auth-interceptor oluşturuldu. Interceptor'ın devreye girebilmesi için app-guards oluşturuldu. ve app-routing-module'a guard eklendi.
-- 
+- Register işlemleri için ise component'i oluşturulup, componentinde sadece bir Form oluşturup authService.register() ile yollandı.
+
 ***********************************
 
 ### 5.1.1 Findex
@@ -359,8 +360,8 @@ minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme 
 
 **Not: Onecardetail'in html'inde isCarRentable() fonksiyonuna dataLoaded2=true diye tanılama yaptım ve butonu "araç Müsait Mi?" olarak değiştirdim. Araç müsait mi butonuna basıldığında öncelikle findex puanı karşılaştırması yapılıyor. Bu karşılaştırmanın ardından eğer puan uygunsa rental component'te oluşturduğum tarih seçme ekranını altına getirdim. Araç müsait mi kontrolü için tarih seçimleri yapılıp sorgu yapılıyor.**
 
-| LocalStorage ID       |  Findex Sorgu |
-:-------------------------:|:-------------------------:
+| LocalStorage ID   |  Findex Sorgu |
+:---------------------:|:-------------------------:
 ![sondeneme2](https://user-images.githubusercontent.com/77545922/114316140-f9ed7880-9b0a-11eb-9783-8d8b87caa04c.PNG)  |  ![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG)
 
 
@@ -373,7 +374,12 @@ minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme 
 -- getUsersById()
 -- logout() tanımlandı.
 
-- Html'de checkLogin() navbarın görüntü sorgulayıcısı olarak kullanılacak. Eğer kullanıcı loginse ismi gözükecek ve ismine tıklandığında profil-çıkış yap butonları gelecek şekilde bir dropdown gelecek. Eğer login değilse giriş yap ve kayıt ol butonlarıyla navbar bizi karşılayacak.
+- Html'de checkLogin() navbarın görüntü sorgulayıcısı olarak kullanılacak. Eğer kullanıcı loginse ismi gözükecek ve ismine tıklandığında profil-çıkış yap butonları gelecek şekilde bir dropdown gelecek. Eğer login değilse giriş yap ve kayıt ol butonlarıyla navbar bizi karşılayacak. Navbar üzerinde Araçlar butonu hariç bütün butonlar sağlıklı çalışıyor.
+
+| LoggedIn   |  LoggedOut |
+:---------------------:|:-------------------------:
+![sondenemenavbar](https://user-images.githubusercontent.com/77545922/114316431-3b325800-9b0c-11eb-9083-97a948beac5e.PNG)  |  ![sondenemenavbarlogout](https://user-images.githubusercontent.com/77545922/114316537-ac720b00-9b0c-11eb-9925-a4cf9e66da9e.PNG)
+
 
 ***********************************
 ### 5.1.3 Brand-Color
@@ -396,6 +402,10 @@ customer.component kişinin profilini görüntülemesi için açılacak sayfa ol
 - Güncellemelerin yapılabilmesi içni ise customer klasörüne customer-update klasörü eklendi. car-update gibi yaptığımız işlemlerin aynısını yaptım. Oluşturduğum formda kullanıcı idsini localstorage'tan aldım.
 - Burada güncelleme yaparken User gönderiyoruz ancak kayıt olurken passwordumuzu passwordHash ve Salt olarak kaydetmiştik.
 Bu kısımda eksikler var tamamlanacak.
+
+![sondeneme4](https://user-images.githubusercontent.com/77545922/114316568-cf042400-9b0c-11eb-8ede-2583c97e0a85.PNG)
+
+
 
 ***********************************
 
@@ -446,6 +456,8 @@ Bu kısımda eksikler var tamamlanacak.
 
 **NOT: paymentCalculator() yazdıktan sonra NaN(NotANumber) döndüren arkadaşlar, bu kodların çalışma sırasında bir sıkıntıdan dolayı olabilir. Şu şekilde basit bir fotoğrafla anlatabilirim galiba.**
 
+![sondeneme6](https://user-images.githubusercontent.com/77545922/114316616-f8bd4b00-9b0c-11eb-9532-59e4f368fad0.PNG)
+
 
 **Konsola baktığınızda paymentCalculator'da dönen işleme daha carDetail gitmediği için NaN dönüyor. Ancak carDetail gittikten sonra gördüğünüz gibi ödeme tutarını döndürebiliyor.**
 
@@ -466,7 +478,11 @@ Genel olarak eksiklerin hepsi gidermeye çalışacağım ve her geçen gün bu u
 
 Bunların hepsi ilk akla gelen eksikler. Bunları tamamlarken bile belki aklıma farklı şeyler gelecek. Dediğim gibi her geçen gün aklıma gelenleri bu uygulamaya getirmeyi deneyeceğim öncelikli olarak bu eksikleri. 
 
-Ödeme ekranındaki kiralama işlemi ise aşağıdaki gibi:
+Ödeme ekranındaki kiralama işlemi yapılırsa ve yapılmazsa aşağıdaki gibi. Ayrıca kayıtlı kart'ı da görebilirsiniz.
 
+| PeşinSatan   |  Veresiye Veren |
+:---------------------:|:-------------------------:
+![sondeneme8](https://user-images.githubusercontent.com/77545922/114316666-25716280-9b0d-11eb-9424-d89bbdd5ba76.PNG)
+  |  ![sondeneme7](https://user-images.githubusercontent.com/77545922/114316671-2d310700-9b0d-11eb-9faa-763fd86263d0.PNG)
 
 
