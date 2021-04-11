@@ -361,7 +361,8 @@ minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme 
 
 
 ![sondeneme2](https://user-images.githubusercontent.com/77545922/114316140-f9ed7880-9b0a-11eb-9783-8d8b87caa04c.PNG =250x250)
- ![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG =250x250)
+
+![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG =250x250)
 
 
 ***********************************
