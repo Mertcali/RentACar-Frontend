@@ -358,7 +358,7 @@ Kullanıcı findexi oluşturmak ve kontrol edebilmek için ise
 ettiğimiz bu userId ile onecardetail kısmında önce bu id'yi getItem() ile aldık ve userId'nin findexScore'u ile aracın
 minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme yetkisini vermiş olduk.
 
-**Not: Onecardetail'in html'inde isCarRentable() fonksiyonuna dataLoaded2=true diye tanılama yaptım ve butonu "araç Müsait Mi?" olarak değiştirdim. Araç müsait mi butonuna basıldığında öncelikle findex puanı karşılaştırması yapılıyor. Bu karşılaştırmanın ardından eğer puan uygunsa rental component'te oluşturduğum tarih seçme ekranını altına getirdim. Araç müsait mi kontrolü için tarih seçimleri yapılıp sorgu yapılıyor.**
+**Not: Onecardetail'in html'inde isCarRentable() fonksiyonuna dataLoaded2=true diye tanımlama yaptım ve butonu "araç Müsait Mi?" olarak değiştirdim. Araç müsait mi butonuna basıldığında öncelikle findex puanı karşılaştırması yapılıyor. Bu karşılaştırmanın ardından eğer puan uygunsa rental component'te oluşturduğum tarih seçme ekranını altına getirdim. Araç müsait mi kontrolü için tarih seçimleri yapılıp sorgu yapılıyor.**
 
 | LocalStorage ID   |  Findex Sorgu |
 :---------------------:|:-------------------------:
@@ -443,16 +443,18 @@ Bu kısımda eksikler var tamamlanacak.
   
   rental değişkenimize gelen rentali atamış oluyoruz ve klasik kart kontrolü işlemlerinden sonra kira ekleme işlemini paymentCheck'in içine yazıyoruz.
   
-**Eksikler:
-**Kartı istenilen isme göre kaydetme işlemi getirilebilir.
-**Mevcut kartı güncelleme getirilebilir.
-**Bu Kart ile Öde butonu aktif hale getirilmedi.**
+**Eksikler:**
+
+** **Kartı istenilen isme göre kaydetme işlemi getirilebilir.**
+** **Mevcut kartı güncelleme getirilebilir.**
+** **Bu Kart ile Öde butonu aktif hale getirilmedi.**
 
   
 - Ödeme işleminde fiyat kıyaslaması için getCarDetailsById() ile rental'den gelen carId'yi kullanarak araç detaylarımızı getirdik. PaymentCalculator() ile de günlük araç fiyatını total günle çarparak total fiyatı bulduk.
 
-**Eksikler:
-**Ödeme özet sayfası oluşturulabilir.**
+**Eksikler:**
+
+** **Ödeme özet sayfası oluşturulabilir.**
 
 **NOT: paymentCalculator() yazdıktan sonra NaN(NotANumber) döndüren arkadaşlar, bu kodların çalışma sırasında bir sıkıntıdan dolayı olabilir. Şu şekilde basit bir fotoğrafla anlatabilirim galiba.**
 
@@ -463,10 +465,11 @@ Bu kısımda eksikler var tamamlanacak.
 
 - Frontend tarafında para kontrolü gerçekleştirildi. Ödeme onaylandıysa para yeterliyse rental ekleniyor. Para kontrolü bir fonksiyona atanacak ancak aşağıdaki işlemler tamamlandıktan sonra.
 
-**Eksikler:**Kiradan sonra findex puanının yükselmesi ve karttaki paranın azalması daha eklenmedi.
+**Eksikler:**
 
-**Diğer sayfalarda listenin gitmesi giderilecek.
-**Kartı kaydetme checkbox'ı eklendi ancak şöyle bir mantık hatası var. Benim yazdığım kodta
+** **Kiradan sonra findex puanının yükselmesi ve karttaki paranın azalması daha eklenmedi.**
+**  **Diğer sayfalarda listenin gitmesi giderilecek.**
+** **Kartı kaydetme checkbox'ı eklendi ancak şöyle bir mantık hatası var. Benim yazdığım kodta
 veritabanında olmayan kartla ödeme yapılamıyor. Ödeme yapılamadığı için kart kaydedilemiyor.(isterde 
 ödeme alındıktan sonra kartı kaydet işleminin yapılması). Bu yüzden bu kısımda tekrar düzenlemeler yapılacak.**
 
