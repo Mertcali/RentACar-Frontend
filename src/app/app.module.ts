@@ -26,6 +26,11 @@ import { BrandAddComponent } from './components/add_operations/brand-add/brand-a
 import { ColorAddComponent } from './components/add_operations/color-add/color-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { BrandColorComponent } from './components/brand-color/brand-color.component';
+import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update/customer-update.component';
+
+
 
 @NgModule({
   declarations: [
@@ -46,6 +51,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
+    RegisterComponent,
+    BrandColorComponent,
+    CustomerUpdateComponent,
+  
     
   ],
   imports: [

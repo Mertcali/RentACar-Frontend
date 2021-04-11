@@ -22,9 +22,13 @@ export class RentalService {
     return this.httpClient.get<ListResponseModel<RentalDetail>>(newPath)
   }
 
-  getRentalDetailByCarId(carId:number):Observable<ListResponseModel<Rental>>{
+  getRentalByCarId(carId:number):Observable<ListResponseModel<Rental>>{
     let newPath = this.apiUrl + "getrentalbycarid?id="+carId
     return this.httpClient.get<ListResponseModel<Rental>>(newPath)
+  }
+  getRentalDetailsByCarId(carId:number):Observable<ListResponseModel<RentalDetail>>{
+    let newPath = this.apiUrl + "getrentaldetailsbycarid?id="+carId
+    return this.httpClient.get<ListResponseModel<RentalDetail>>(newPath)
   }
 
   setRentingCar(rental: Rental) {
@@ -39,7 +43,7 @@ export class RentalService {
     this.rentingCar == null
  }
 
- add(rental: Rental): Observable<ResponseModel> {
+ add(rental: Rental):Observable<ResponseModel>{
    let newPath = this.apiUrl + "add"
     return this.httpClient.post<ResponseModel>(newPath, rental);
  }

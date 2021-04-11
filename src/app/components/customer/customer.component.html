@@ -1,9 +1,17 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div class="card" style="width: 25rem;">
+  <img src="https://img1.pngindir.com/20180808/aua/kisspng-portable-network-graphics-computer-icons-clip-art-nejc-selan-profili-nejc-selan-kim-ki%C5%9Fi-rehberi-5b6a7800f3e7b5.925784971533704192999.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Profil Görünümü</h5>
+    <p class="card-text">Burada başka biri profilinize girdiğinde nasıl göründüğünü görüp, düzenleme yapabilirsiniz.</p>
   </div>
-  
-  <ul  class="list-group list-group-flush">
-      <li *ngFor="let customer of customers" class="list-group-item list-group-item-primary">{{customer.companyName}}</li>
-  
-    </ul>
-    <br>
+  <ul *ngFor="let user of user" class="list-group list-group-flush">
+    <li class="list-group-item">Ad: {{user.firstName}} </li>
+    <li class="list-group-item">Soyadı: {{user.lastName}}</li>
+    <li class="list-group-item">Şirket: {{user.companyName}}</li>
+    <li class="list-group-item">Mail: {{user.email}}</li>
+    <li class="list-group-item">Findeks: {{user.findexScore}}</li>
+  </ul>
+  <div class="card-body">
+    <a (click)="goUpdate()"class="card-link">Profili Ayarla</a>
+  </div>
+</div>

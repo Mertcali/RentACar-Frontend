@@ -31,12 +31,13 @@ export class CardetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      if(params["brandId"]){
+      if(params["brandId"] && params["colorId"]){
+        this.getCarDetailsFiltered(params["brandId"],params["colorId"])
+      }
+      else if(params["brandId"]){
         this.getCarDetailsByBrandId(params["brandId"])
       }else if(params["colorId"]){
         this.getCarDetailsByColorId(params["colorId"])
-      // }else if(params["carId"]){
-      //   this.getCarByCarId(params["carId"])
       }
       else{
         this.getCarDetails()
@@ -77,6 +78,15 @@ export class CardetailComponent implements OnInit {
         this.currentCar=car;
       }
 
+    getCarDetailsFiltered(brandId:number,colorId:number){
+      this.cardetailService.getCarDetailsFiltered(brandId,colorId).subscribe(response=>{
+        this.carDetails=response.data
+        this.dataLoaded=true;
+        if(!this.carDetails.length){
+          this.toastrService.warning("Araç mevcut değil","Dikkat")
+        }
+      })
+    }
 
 
 }

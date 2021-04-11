@@ -1,0 +1,70 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Profili Güncelle</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="customerUpdateForm">
+        
+            <div class="mb-3">
+              <label for="firstName">Adınız</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="firstName"
+                  formControlName="firstName"
+                  class="form-control"
+                  placeholder="Adınız"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="lastName">Soyadınız</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="lastName"
+                  formControlName="lastName"
+                  class="form-control"
+                  placeholder="Soyadınız"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="email"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="mail@mail.com"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="password">Şifre</label>
+              <div class="form-group">
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  class="form-control"
+                  placeholder="şifre"
+                />
+              </div>
+            </div>
+  
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-fill btn-dark" (click)="update()">Güncelle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

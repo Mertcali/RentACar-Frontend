@@ -8,5 +8,6 @@ export interface CarDetail{
     imagePath:string,
     modelYear:string,
     description:string,
-    dailyPrice:number
+    dailyPrice:number,
+    minFindex:number
 }

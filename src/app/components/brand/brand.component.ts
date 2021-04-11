@@ -12,6 +12,7 @@ export class BrandComponent implements OnInit {
   brands:Brand[]=[]
   currentBrand:Brand;
   nullBrand:Brand;
+  brandId:number;
   filterText="";
   dataLoaded=false;
 
@@ -30,6 +31,7 @@ export class BrandComponent implements OnInit {
 
   setCurrentBrand(brand:Brand){
     this.currentBrand=brand;
+    console.log(this.currentBrand)
   }
 
   getCurrentBrandClass(brand:Brand){

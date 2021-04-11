@@ -100,3 +100,36 @@
     </div>
   </div>
 </div>
+
+<div class="col-md-4">
+  <div class="mb-3">
+    <label for="registeredCard"></label>
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          (click)="registeredCard($event)"
+          type="checkbox"
+          class="form-check-input"
+          id="registeredCard"
+        />
+        <label class="form-check-label" for="registeredCard"
+          >Kartı Kaydet</label
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+  <div *ngFor="let card of userCards" class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">KartNo: {{card.cardNumber}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Kayıtlı kişinin: </h6>
+      <p class="card-text">Ad:{{card.nameOnCard}}  Soyad:{{card.lastNameOnCard}} </p>
+      <a href="#" class="card-link">Bu Kart ile öde</a>
+    </div>
+  </div>
+

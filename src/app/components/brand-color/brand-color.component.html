@@ -1,0 +1,27 @@
+<div class="mt-2">
+  <button routerLink="/cars" class="btn btn-primary w-100">Tümünü listele</button>
+
+  <div class="mt-2">
+    <select [(ngModel)]="brandId" class="form-select">
+        <option [ngValue]="undefined" disabled selected>
+            -- Marka seçiniz--
+          </option>
+        <option [value]="brand.id" *ngFor="let brand of brands" [selected]="getSelectedBrand(brand.id)">
+            {{brand.name}}
+        </option>
+    </select>
+</div>
+  <div class="mt-2">
+      <select [(ngModel)]="colorId" class="form-select w-100">
+          <option [ngValue]="undefined" disabled selected>
+              -- Renk seçiniz--
+            </option>
+          <option *ngFor="let color of colors" [value]="color.id" [selected]="getSelectedColor(color.id)">
+              {{color.name}}
+          </option>
+      </select>
+  </div>
+  <div class="mt-2">
+      <button routerLink="/cars/filter/{{brandId}}/{{colorId}}" class="btn btn-success w-100">Filtrele</button>
+  </div>
+</div>
