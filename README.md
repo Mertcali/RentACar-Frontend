@@ -480,9 +480,12 @@ Bunların hepsi ilk akla gelen eksikler. Bunları tamamlarken bile belki aklıma
 
 Ödeme ekranındaki kiralama işlemi yapılırsa ve yapılmazsa aşağıdaki gibi. Ayrıca kayıtlı kart'ı da görebilirsiniz.
 
-| PeşinSatan   |  Veresiye Veren |
-:---------------------:|:-------------------------:
+**Peşin Satan
+
 ![sondeneme8](https://user-images.githubusercontent.com/77545922/114316666-25716280-9b0d-11eb-9424-d89bbdd5ba76.PNG)
-  |  ![sondeneme7](https://user-images.githubusercontent.com/77545922/114316671-2d310700-9b0d-11eb-9faa-763fd86263d0.PNG)
+
+**Veresiye Satan
+
+![sondeneme7](https://user-images.githubusercontent.com/77545922/114316671-2d310700-9b0d-11eb-9faa-763fd86263d0.PNG)
 
 
