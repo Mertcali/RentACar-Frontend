@@ -446,7 +446,9 @@ Bu kısımda eksikler var tamamlanacak.
 **Eksikler:**
 
 ** **Kartı istenilen isme göre kaydetme işlemi getirilebilir.**
+
 ** **Mevcut kartı güncelleme getirilebilir.**
+
 ** **Bu Kart ile Öde butonu aktif hale getirilmedi.**
 
   
@@ -468,16 +470,20 @@ Bu kısımda eksikler var tamamlanacak.
 **Eksikler:**
 
 ** **Kiradan sonra findex puanının yükselmesi ve karttaki paranın azalması daha eklenmedi.**
+
 **  **Diğer sayfalarda listenin gitmesi giderilecek.**
+
 ** **Kartı kaydetme checkbox'ı eklendi ancak şöyle bir mantık hatası var. Benim yazdığım kodta
 veritabanında olmayan kartla ödeme yapılamıyor. Ödeme yapılamadığı için kart kaydedilemiyor.(isterde 
 ödeme alındıktan sonra kartı kaydet işleminin yapılması). Bu yüzden bu kısımda tekrar düzenlemeler yapılacak.**
 
 ### 5.2 Final Ve Resimler
 
-Genel olarak eksiklerin hepsi gidermeye çalışacağım ve her geçen gün bu uygulamayla uğraşarak geliştirmeye çalışacağım. Bu projeye başladığımda web geliştirmenin en ufak bir noktasını dahi bilmiyordum. Öğrenmesi, uygulaması çok keyifli. Ancak vaktim biraz dar. Ek olarak 
-**Yönetici paneli eklenebilir.
-**Homepage eklenebilir.
+Genel olarak eksiklerin hepsi gidermeye çalışacağım ve her geçen gün bu uygulamayla uğraşarak geliştirmeye çalışacağım. Bu projeye başladığımda web geliştirmenin en ufak bir noktasını dahi bilmiyordum. Öğrenmesi, uygulaması çok keyifli. Ancak vaktim biraz dar. Ek olarak:
+
+** **Yönetici paneli eklenebilir.**
+
+** **Homepage eklenebilir.**
 
 Bunların hepsi ilk akla gelen eksikler. Bunları tamamlarken bile belki aklıma farklı şeyler gelecek. Dediğim gibi her geçen gün aklıma gelenleri bu uygulamaya getirmeyi deneyeceğim öncelikli olarak bu eksikleri. 
 
