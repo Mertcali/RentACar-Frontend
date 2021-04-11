@@ -359,10 +359,10 @@ minFindex'ini karşılaştırdık. Böylece findex puanına göre kiralayabilme 
 
 **Not: Onecardetail'in html'inde isCarRentable() fonksiyonuna dataLoaded2=true diye tanılama yaptım ve butonu "araç Müsait Mi?" olarak değiştirdim. Araç müsait mi butonuna basıldığında öncelikle findex puanı karşılaştırması yapılıyor. Bu karşılaştırmanın ardından eğer puan uygunsa rental component'te oluşturduğum tarih seçme ekranını altına getirdim. Araç müsait mi kontrolü için tarih seçimleri yapılıp sorgu yapılıyor.**
 
-LocalStorageGelenId            |  FindeksTest
-:-------------------------:|:-------------------------:
-![sondeneme2](https://user-images.githubusercontent.com/77545922/114316140-f9ed7880-9b0a-11eb-9783-8d8b87caa04c.PNG)
-  |  ![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG)
+| LocalStorageGelenId     |  FindeksTest            |
+|-------------------------|-------------------------|
+|![sondeneme2](https://user-images.githubusercontent.com/77545922/114316140-f9ed7880-9b0a-11eb-9783-8d8b87caa04c.PNG)
+  |  ![sondeneme3](https://user-images.githubusercontent.com/77545922/114316152-02de4a00-9b0b-11eb-8f43-18e8898485b7.PNG)|
 
 
 ***********************************
